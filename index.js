@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const jest = require('jest');
+const {Circle} = require('./lib/shapes');
 
 const questions = [
     {
@@ -34,9 +35,11 @@ function init() {
     inquirer
     .prompt(questions)
     .then((data) => {
-       // const fileName = 'Logo.svg';
-        // writeToFile(fileName, data);
-        console.log(data);
+        const circleClass = new Circle(data.letters, data.letterColor, data.shapeColor);
+        const svgString = circleClass.render();
+        console.log(svgString);
+        const fileName = 'Logo.svg';
+         fs.writeFileSync(fileName, svgString, () => {});
     });
 };
 
