@@ -23,7 +23,7 @@ const questions = [
     },
 
     {
-        type: 'list',
+        type: 'input',
         name: 'shapeColor',
         message: "Please enter a color for your shape on the logo.",
     },
@@ -34,8 +34,9 @@ function init() {
     inquirer
     .prompt(questions)
     .then((data) => {
-        const fileName = 'Logo.svg';
-        writeToFile(fileName, data);
+       // const fileName = 'Logo.svg';
+        // writeToFile(fileName, data);
+        console.log(data);
     });
 };
 
