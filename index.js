@@ -2,6 +2,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const jest = require('jest');
 const {Circle} = require('./lib/shapes');
+const {Triangle} = require('./lib/shapes');
+const {Square} = require('./lib/shapes');
 
 const questions = [
     {
@@ -35,9 +37,18 @@ function init() {
     inquirer
     .prompt(questions)
     .then((data) => {
-        const circleClass = new Circle(data.letters, data.letterColor, data.shapeColor);
-        const svgString = circleClass.render();
-        console.log(svgString);
+        let svgString = "";
+        if (data.shape === "Circle") {
+            const circleClass = new Circle(data.letters, data.letterColor, data.shapeColor);
+            svgString = circleClass.render();
+        } else if (data.shape === "Triangle") {
+            const triangleClass = new Triangle(data.letters, data.letterColor, data.shapeColor);
+            svgString = triangleClass.render();
+        } else {
+            (data.shape === "Square")
+            const squareClass = new Square(data.letters, data.letterColor, data.shapeColor);
+            svgString = squareClass.render();
+        };
         const fileName = 'Logo.svg';
          fs.writeFileSync(fileName, svgString, () => {});
     });
