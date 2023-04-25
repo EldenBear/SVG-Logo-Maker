@@ -1,10 +1,11 @@
+// Imports used for logo
 const inquirer = require('inquirer');
 const fs = require('fs');
 const jest = require('jest');
 const {Circle} = require('./lib/shapes');
 const {Triangle} = require('./lib/shapes');
 const {Square} = require('./lib/shapes');
-
+// Prompts given to user
 const questions = [
     {
         type: 'input',
@@ -32,7 +33,7 @@ const questions = [
     },
 ];
 
-
+// Function that takes in user input and creates a svg file
 function init() {
     inquirer
     .prompt(questions)
@@ -53,5 +54,5 @@ function init() {
          fs.writeFileSync(fileName, svgString, () => {});
     });
 };
-
+// Calls init function
 init();
