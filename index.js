@@ -1,7 +1,6 @@
 // Imports used for logo
 const inquirer = require("inquirer");
 const fs = require("fs");
-const jest = require("jest");
 const { Circle } = require("./lib/shapes");
 const { Triangle } = require("./lib/shapes");
 const { Square } = require("./lib/shapes");
