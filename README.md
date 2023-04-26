@@ -1,7 +1,8 @@
 # SVG-Logo-Maker
 ## Description
 ```
-This app takes in user input from the command line and returns a svg logo with the parameters given by the user.
+This app takes in user input from the command line and 
+returns a svg logo with the parameters given by the user.
 ```
 
 
